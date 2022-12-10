@@ -5,8 +5,26 @@
     <artifactId>spring-demos</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+
+    <properties>
+        <mybatisplus.version>3.5.2</mybatisplus.version>
+        <mysql.version>5.1.47</mysql.version>
+        <hutool.version>5.7.22</hutool.version>
+        <lombok.version>1.18.22</lombok.version>
+        <db-module.version>1.0.0</db-module.version>
+        <security-module.version>1.0.0</security-module.version>
+        <common-module.version>1.0.0</common-module.version>
+        <devtools.version>2.3.2.RELEASE</devtools.version>
+        <guava.version>31.1-jre</guava.version>
+        <jwt.version>0.10.7</jwt.version>
+    </properties>
+
     <modules>
         <module>security-module</module>
+        <module>db-module</module>
+        <module>security-module02</module>
+        <module>common-module</module>
+        <module>security-module03</module>
     </modules>
 
     <parent>
@@ -15,24 +33,62 @@
         <version>2.3.9.RELEASE</version>
     </parent>
 
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.47</version>
+                <version>${mysql.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.7.22</version>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.prehitting.db</groupId>
+                <artifactId>db-module</artifactId>
+                <version>${db-module.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.prehitting</groupId>
+                <artifactId>security-module</artifactId>
+                <version>${security-module.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.prehitting.common</groupId>
+                <artifactId>common-module</artifactId>
+                <version>${common-module.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jwt.version}</version>
             </dependency>
         </dependencies>
-
     </dependencyManagement>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,12 +97,29 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
     </dependencies>

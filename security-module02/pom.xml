@@ -9,7 +9,8 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>security-module</artifactId>
+<!--    <groupId>com.prehitting.security02</groupId>-->
+    <artifactId>security-module02</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -34,10 +35,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.prehitting.common</groupId>
             <artifactId>common-module</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 </project>

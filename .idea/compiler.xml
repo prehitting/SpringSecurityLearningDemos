@@ -7,7 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="db-module" />
+        <module name="security-module02" />
         <module name="security-module" />
+        <module name="common-module" />
+        <module name="security-module03" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,7 +20,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common-module" options="-parameters" />
+      <module name="db-module" options="-parameters" />
       <module name="security-module" options="-parameters" />
+      <module name="security-module02" options="-parameters" />
+      <module name="security-module03" options="-parameters" />
     </option>
   </component>
 </project>

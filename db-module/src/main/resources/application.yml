@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/security_test?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: db
+  profiles:
+    active: db
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true
+  mapper-locations: classpath:com/prehitting/db/mapper/*.xml
+  type-aliases-package: com.prehitting.domain
+logging:
+  level:
+    root: info
+
